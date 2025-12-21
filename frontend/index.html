@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Water Leakage Monitoring Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Leaflet CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <h1>💧 Water Leakage Monitoring Dashboard</h1>
+    <p>GIS-based Underground Pipeline Health Monitoring</p>
+</header>
+
+<!-- ================= MAIN CONTAINER ================= -->
+<div class="container">
+
+    <!-- ===== LEFT PANEL (INPUTS) ===== -->
+    <div class="control-panel">
+
+        <h2>Leakage Input Parameters</h2>
+
+        <input type="text" id="location_code" placeholder="Location Code (Zone_Block_Pipe)" />
+
+        <input type="number" id="pressure" placeholder="Pressure" />
+        <input type="number" id="flow_rate" placeholder="Flow Rate" />
+        <input type="number" id="temperature" placeholder="Temperature" />
+        <input type="number" id="vibration" placeholder="Vibration" />
+        <input type="number" id="rpm" placeholder="RPM" />
+        <input type="number" id="operational_hours" placeholder="Operational Hours" />
+
+        <button id="checkLeakBtn">Check Leakage</button>
+
+        <!-- Result Card -->
+        <div id="resultCard" class="result-card hidden">
+            <h3>Leakage Status</h3>
+            <p id="statusText"></p>
+            <p><strong>Anomaly Score:</strong> <span id="scoreText"></span></p>
+            <p><strong>Zone:</strong> <span id="zoneText"></span></p>
+            <p><strong>Block:</strong> <span id="blockText"></span></p>
+            <p><strong>Pipe:</strong> <span id="pipeText"></span></p>
+        </div>
+
+    </div>
+
+    <!-- ===== RIGHT PANEL (MAP) ===== -->
+    <div class="map-panel">
+        <div id="map"></div>
+    </div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>© 2025 Smart Water Infrastructure | ML + GIS Dashboard</p>
+</footer>
+
+<!-- ================= JS FILES ================= -->
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Custom JS -->
+<script src="js/map.js"></script>
+<script src="js/api.js"></script>
+<script src="js/animations.js"></script>
+
+</body>
+</html>
